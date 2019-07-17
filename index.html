@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Kawaii Fight!</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
 
-<head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
-</head>
+  <body>
+    <div class="main">
+      <h2>Kawaii Fight!</h2>
 
-<body>
-	<div id="app"></div>
+      <div>
+        <form id="rockPaperScissors">
+          <div class="img-box">
+            <img id="rock" src="img/rock.jpg" alt="cute but grumpy rock" />
+            <img id="paper" src="img/paper.jpg" alt="cute note paper" />
+            <img id="scissors" src="img/scissors.png" alt="cute scissors" />
+          </div>
 
-	<script src="src/index.js">
-	</script>
-</body>
+          <div>
+            <input type="button" value="Start Over" onclick="resetScore()" />
+          </div>
 
+          <div>
+            <p id="outcome"></p>
+            <p id="roundCount"></p>
+            <p id="playerScore"></p>
+            <p id="compScore"></p>
+            <p id="tieCount"></p>
+            <p id="summaryCount">Round: 0 | Player: 0 | Computer: 0 | Tie: 0</p>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <p>
+          image sources:
+          <a
+            href="https://www.teepublic.com/t-shirt/1397602-cute-rock"
+            target="_blank"
+            >rock</a
+          >,
+          <a
+            href="https://www.kisspng.com/png-paper-post-it-note-download-cute-paper-notes-481072/"
+            target="_blank"
+            >paper</a
+          >,
+          <a
+            href="https://www.deviantart.com/amis0129/art/DD-Scissors-Kawaii-349805521"
+            target="_blank"
+            >scissors</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
 </html>

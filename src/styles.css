@@ -1,3 +1,14 @@
 body {
+  background-color: beige;
   font-family: sans-serif;
+}
+
+img {
+  background: lightpink;
+  max-width: 200px;
+  border-radius: 100px;
+}
+
+img:active {
+  border-radius: 90px;
 }
