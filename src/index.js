@@ -16,7 +16,7 @@ let playerWins = 0;
 let compWins = 0;
 let tie = 0;
 let roundText = "";
-//
+
 // reset handling
 function resetAll() {
   roundCount = 0;
