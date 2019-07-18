@@ -17,6 +17,14 @@ let compWins = 0;
 let tie = 0;
 let roundText = "";
 
+// reset handling
+function resetAll() {
+  roundCount = 0;
+  playerWins = 0;
+  compWins = 0;
+  tie = 0;
+}
+
 let computerSelect = computerPlay();
 let playerSelect = "";
 
@@ -45,6 +53,15 @@ const playRound = function(playerSelect, computerSelect) {
   }
   let score = `Round: ${roundCount} | Player: ${playerWins} | Computer: ${compWins} | Tie: ${tie}`;
 
+  // logic for 5 round match
+  if (playerWins === 5) {
+    document.getElementById("outcome").textContent = "Player wins 5 matches!";
+    resetAll();
+  } else if (compWins === 5) {
+    document.getElementById("outcome").textContent = "Computer wins 5 matches!";
+    resetAll();
+  }
+
   document.getElementById("outcome").textContent = roundText;
   document.getElementById("summaryCount").textContent = score;
   return score;
@@ -69,31 +86,12 @@ document.getElementById("scissors").onclick = function() {
   computerSelect = computerPlay();
 };
 
-// logic for 5 round match
-
 // reset score
-function resetScore() {
-  document.getElementById("outcome").textContent = "";
-  document.getElementById("summaryCount").textContent = "";
-  roundCount = 0;
-  playerWins = 0;
-  compWins = 0;
-  tie = 0;
+const resetClick = document.getElementById("resetScore");
+resetClick.onclick = function() {
+  resetAll();
   roundText = "";
-}
-// const game = function() {
-//   for (let i = 0; i < 6; i++) {
-//     if (playerWins === 5 && compWins < 5) {
-//       return "You win the 5 round match!";
-//     } else if (compWins === 5 && playerWins < 5) {
-//       return "Computer wins the 5 round match";
-//     }
-
-//     console.log(score);
-//     console.log(roundText);
-
-//     playRound(playerSelect, computerSelect);
-//   }
-// };
-
-// console.log(game());
+  document.getElementById("outcome").textContent = "";
+  document.getElementById("summaryCount").textContent =
+    "Round: 0 | Player: 0 | Computer: 0 | Tie: 0";
+};

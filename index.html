@@ -3,12 +3,16 @@
   <head>
     <title>Kawaii Fight!</title>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mali&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles.css" />
   </head>
 
   <body>
     <div class="main">
-      <h2>Kawaii Fight!</h2>
+      <h1>Kawaii Fight!</h1>
 
       <div>
         <form id="rockPaperScissors">
@@ -19,7 +23,9 @@
           </div>
 
           <div>
-            <input type="button" value="Start Over" onclick="resetScore()" />
+            <button type="button" id="resetScore" name="resetScore">
+              Start Over
+            </button>
           </div>
 
           <div>
