@@ -4,7 +4,7 @@
     <title>Kawaii Fight!</title>
     <meta charset="UTF-8" />
     <link
-      href="https://fonts.googleapis.com/css?family=Mali&display=swap"
+      href="https://fonts.googleapis.com/css?family=Mali|Open+Sans&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
@@ -15,51 +15,75 @@
       <h1>Kawaii Fight!</h1>
 
       <div>
-        <form id="rockPaperScissors">
-          <div class="img-box">
-            <img id="rock" src="img/rock.jpg" alt="cute but grumpy rock" />
-            <img id="paper" src="img/paper.jpg" alt="cute note paper" />
-            <img id="scissors" src="img/scissors.png" alt="cute scissors" />
-          </div>
+        <div class="img-box">
+          <img id="rock" src="img/rock.jpg" alt="cute but grumpy rock" />
+          <img id="paper" src="img/paper.jpg" alt="cute note paper" />
+          <img id="scissors" src="img/scissors.png" alt="cute scissors" />
+        </div>
 
-          <div>
-            <button type="button" id="resetScore" name="resetScore">
-              Start Over
-            </button>
-          </div>
+        <h2 id="outcome">
+          Human -vs- Computer<br />
+          Best of 5 wins!... choose your weapon!
+        </h2>
+        <div class="scores">
+          <p>Round: <span id="roundCount">0</span></p>
+          <p>Human: <span id="playerWins">0</span></p>
+          <p>Computer: <span id="compWins">0</span></p>
+          <p>Tie: <span id="tie">0</span></p>
 
-          <div>
-            <p id="outcome"></p>
-            <p id="roundCount"></p>
-            <p id="playerScore"></p>
-            <p id="compScore"></p>
-            <p id="tieCount"></p>
-            <p id="summaryCount">Round: 0 | Player: 0 | Computer: 0 | Tie: 0</p>
-          </div>
-        </form>
+          <!-- <p id="summaryCount">Round: 0 | Player: 0 | Computer: 0 | Tie: 0</p>   -->
+        </div>
+        <div>
+          <button
+            type="button"
+            id="resetScore"
+            class="button"
+            name="resetScore"
+          >
+            Reset Game
+          </button>
+        </div>
       </div>
 
-      <div>
-        <p>
-          image sources:
-          <a
-            href="https://www.teepublic.com/t-shirt/1397602-cute-rock"
-            target="_blank"
-            >rock</a
-          >,
-          <a
-            href="https://www.kisspng.com/png-paper-post-it-note-download-cute-paper-notes-481072/"
-            target="_blank"
-            >paper</a
-          >,
-          <a
-            href="https://www.deviantart.com/amis0129/art/DD-Scissors-Kawaii-349805521"
-            target="_blank"
-            >scissors</a
-          >
-        </p>
+      <div class="winView hide">
+        <h2>Human wins the game!</h2>
+        <img src="img/pusheen-heavenly.gif" />
+      </div>
+      <div class="loseView hide">
+        <h2>Computer wins the game!</h2>
+        <img src="img/pusheen-is-computer.gif" />
       </div>
     </div>
+
+    <footer class="attributions">
+      <p>
+        Made by
+        <a href="https://github.com/anncancode" target="_blank">Ann Nguyen</a>
+        for
+        <a
+          href="https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors"
+          target="_blank"
+          >The Odin Project</a
+        >.
+      </p>
+      attributions:
+      <a
+        href="https://www.teepublic.com/t-shirt/1397602-cute-rock"
+        target="_blank"
+        >rock</a
+      >,
+      <a
+        href="https://www.kisspng.com/png-paper-post-it-note-download-cute-paper-notes-481072/"
+        target="_blank"
+        >paper</a
+      >,
+      <a
+        href="https://www.deviantart.com/amis0129/art/DD-Scissors-Kawaii-349805521"
+        target="_blank"
+        >scissors</a
+      >,
+      <a href="https://giphy.com/pusheen" target="_blank">cat</a>
+    </footer>
 
     <script src="src/index.js"></script>
   </body>

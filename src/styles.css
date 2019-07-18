@@ -1,19 +1,110 @@
 body {
   background-color: #e8feff;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #7c55e0;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 130px;
 }
 
 h1 {
   font-family: "Mali", cursive;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-top: 50px;
 }
 
-img {
+#outcome {
+  margin-top: 1.6rem;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #7c55e0;
+}
+
+.img-box img {
   background: #f9e0ff;
-  max-width: 200px;
-  border-radius: 100px;
+  margin: 0 0.5rem;
+  max-width: 30%;
+  min-width: 100px;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: transform 1s;
 }
 
-img:active {
-  border-radius: 90px;
+.img-box img:hover {
+  box-shadow: 0px 0px 20px 1px lightgoldenrodyellow;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.img-box img:active {
+  border-radius: 45%;
+}
+
+.button {
+  background-color: pink;
+  padding: 0.8rem;
+  margin: 1rem;
+  border-style: solid;
+}
+
+.scores p {
+  display: inline-block;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.attributions {
+  font-size: 0.6rem;
+}
+
+.winView {
+  background-color: white;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 20px;
+  z-index: 1;
+}
+
+.winView img {
+  max-width: 300px;
+}
+
+.loseView {
+  background-color: #fcf0e4;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50px;
+  z-index: 2;
+}
+
+.loseView h2 {
+  color: brown;
+}
+
+.hide {
+  visibility: hidden;
+  float: right;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.7rem 0 1rem 0;
+  background-color: lightgoldenrodyellow;
+  text-align: center;
 }
