@@ -23,7 +23,7 @@
 
         <h2 id="outcome">
           Human -vs- Computer<br />
-          Best of 5 wins!... choose your weapon!
+          Best of 5 wins!
         </h2>
         <div class="scores">
           <p>Round: <span id="roundCount">0</span></p>
@@ -31,7 +31,7 @@
           <p>Computer: <span id="compWins">0</span></p>
           <p>Tie: <span id="tie">0</span></p>
 
-          <!-- <p id="summaryCount">Round: 0 | Player: 0 | Computer: 0 | Tie: 0</p>   -->
+          <!-- <p id="summaryCount">Round: 0 | Player: 0 | Computer: 0 | Tie: 0</p> -->
         </div>
         <div>
           <button
@@ -40,18 +40,21 @@
             class="button"
             name="resetScore"
           >
-            Reset Game
+            Start Over
           </button>
         </div>
       </div>
 
-      <div class="winView hide">
-        <h2>Human wins the game!</h2>
+      <div id="winView" class=" hide">
+        <h2>Human wins 5 matches...</h2>
         <img src="img/pusheen-heavenly.gif" />
+        <h2>Human wins it all!</h2>
       </div>
-      <div class="loseView hide">
-        <h2>Computer wins the game!</h2>
+      <div id="loseView" class="hide">
+        <h2>Computer wins 5 matches!</h2>
         <img src="img/pusheen-is-computer.gif" />
+        <h2>Cat is computer.</h2>
+        <h2>Cat is superior.</h2>
       </div>
     </div>
 
@@ -82,7 +85,7 @@
         target="_blank"
         >scissors</a
       >,
-      <a href="https://giphy.com/pusheen" target="_blank">cat</a>
+      <a href="https://giphy.com/pusheen" target="_blank">cat</a>, <a href="https://freesound.org/s/392172/" target="_blank">ahhh</a>, and <a href="https://freesound.org/s/415209/" target="_blank">meow</a>.
     </footer>
 
     <script src="src/index.js"></script>

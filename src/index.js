@@ -2,6 +2,13 @@
 let winSfx = new Audio("sfx/heavenly.mp3");
 let loseSfx = new Audio("sfx/madcat.wav");
 
+// staging area for counts
+let roundCount = 0;
+let playerWins = 0;
+let compWins = 0;
+let tie = 0;
+let roundText = "";
+
 // function for randomizing the computer's pick
 const computerPlay = function() {
   let rando = Math.floor(Math.random() * Math.floor(3));
@@ -14,15 +21,11 @@ const computerPlay = function() {
   }
 };
 
-// staging area for counts
-let roundCount = 0;
-let playerWins = 0;
-let compWins = 0;
-let tie = 0;
-let roundText = "";
+let computerSelect = computerPlay();
+let playerSelect = "";
 
 // reset handling
-function resetAll() {
+const resetAll = function() {
   roundCount = 0;
   playerWins = 0;
   compWins = 0;
@@ -31,10 +34,13 @@ function resetAll() {
   document.getElementById("playerWins").textContent = "0";
   document.getElementById("compWins").textContent = "0";
   document.getElementById("tie").textContent = "0";
-}
+};
 
-let computerSelect = computerPlay();
-let playerSelect = "";
+// handler to show win or lose view
+const winOrLose = function(elementID) {
+  let x = document.getElementById(elementID);
+  x.classList.remove("hide");
+};
 
 // logic for each round
 const playRound = function(playerSelect, computerSelect) {
@@ -65,22 +71,18 @@ const playRound = function(playerSelect, computerSelect) {
 
   // logic for 5 round match
   if (playerWins === 5) {
-    document.getElementById("outcome").textContent = "Player wins 5 matches!";
     winSfx.play();
-    resetAll();
+    winOrLose("winView");
   } else if (compWins === 5) {
-    document.getElementById("outcome").textContent = "Computer wins 5 matches!";
     loseSfx.play();
-    resetAll();
+    winOrLose("loseView");
   }
 
   document.getElementById("roundCount").textContent = roundCount;
   document.getElementById("playerWins").textContent = playerWins;
   document.getElementById("compWins").textContent = compWins;
   document.getElementById("tie").textContent = tie;
-
   document.getElementById("outcome").textContent = roundText;
-  document.getElementById("summaryCount").textContent = score;
   return score;
 };
 
@@ -90,13 +92,11 @@ document.getElementById("rock").onclick = function() {
   console.log(playRound(playerSelect, computerSelect));
   computerSelect = computerPlay();
 };
-
 document.getElementById("paper").onclick = function() {
   playerSelect = "paper";
   console.log(playRound(playerSelect, computerSelect));
   computerSelect = computerPlay();
 };
-
 document.getElementById("scissors").onclick = function() {
   playerSelect = "scissors";
   console.log(playRound(playerSelect, computerSelect));
@@ -106,9 +106,9 @@ document.getElementById("scissors").onclick = function() {
 // reset score
 const resetClick = document.getElementById("resetScore");
 resetClick.onclick = function() {
+  document.getElementById("winView").classList.add("hide");
+  document.getElementById("loseView").classList.add("hide");
   resetAll();
   roundText = "";
-  document.getElementById("outcome").textContent = "";
-  document.getElementById("summaryCount").textContent =
-    "Round: 0 | Player: 0 | Computer: 0 | Tie: 0";
+  document.getElementById("outcome").textContent = "Let's Play!";
 };
