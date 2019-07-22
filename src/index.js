@@ -87,28 +87,29 @@ const playRound = function(playerSelect, computerSelect) {
 };
 
 // user choices
-document.getElementById("rock").onclick = function() {
+document.getElementById("rock").addEventListener("click", () => {
   playerSelect = "rock";
   console.log(playRound(playerSelect, computerSelect));
   computerSelect = computerPlay();
-};
-document.getElementById("paper").onclick = function() {
+});
+
+document.getElementById("paper").addEventListener("click", () => {
   playerSelect = "paper";
   console.log(playRound(playerSelect, computerSelect));
   computerSelect = computerPlay();
-};
-document.getElementById("scissors").onclick = function() {
+});
+
+document.getElementById("scissors").addEventListener("click", () => {
   playerSelect = "scissors";
   console.log(playRound(playerSelect, computerSelect));
   computerSelect = computerPlay();
-};
+});
 
 // reset score
-const resetClick = document.getElementById("resetScore");
-resetClick.onclick = function() {
+document.getElementById("resetScore").addEventListener("click", () => {
   document.getElementById("winView").classList.add("hide");
   document.getElementById("loseView").classList.add("hide");
   resetAll();
   roundText = "";
   document.getElementById("outcome").textContent = "Let's Play!";
-};
+});
